@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Meal Store</string>
+    <string name="logo_user">logo user</string>
+    <string name="favorite_list">favorite list</string>
+    <string name="best_meal_list">Best Meal List:</string>
+    <string name="failed_to_fetch_data">Failed to fetch data</string>
+    <string name="warning">warning</string>
+    <string name="image_meal">Image Meal</string>
+    <string name="add_to_favorite">Add To Favorite</string>
+    <string name="Lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="meal_name">Meal Name</string>
+    <string name="id">id</string>
+    <string name="favorites_empty">Favorites Empty</string>
+    <string name="remove_from_favorite">Remove From Favorite</string>
+    <string name="meal_detail_image">Meal Detail Image</string>
+    <string name="meal_id">meal Id</string>
+</resources>

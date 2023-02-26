@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.DetailActivity">
+
+    <data>
+        <variable
+            name="mealDetail"
+            type="com.bootcamp.ilhamsetyabudi_mealdb.data.network.model.MealsItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_background">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/meal_detail_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5">
+
+                <ImageView
+                    android:id="@+id/iv_meal"
+                    loadImageFromUrl="@{mealDetail.strMealThumb}"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:contentDescription="@string/meal_detail_image"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/img_placeholder" />
+
+                <TextView
+                    android:id="@+id/meal_name"
+                    android:layout_width="255dp"
+                    android:layout_height="31dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@{mealDetail.strMeal}"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_meal"
+                    tools:text="@string/meal_name" />
+
+
+                <ImageView
+                    android:id="@+id/favorite_btn"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="@string/add_to_favorite"
+                    android:src="@drawable/favorite_add"
+                    app:layout_constraintBottom_toBottomOf="@+id/meal_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.866"
+                    app:layout_constraintStart_toEndOf="@+id/meal_name"
+                    app:layout_constraintTop_toTopOf="@id/meal_name"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@{mealDetail.idMeal}"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/meal_name"
+                    tools:text="@string/id" />
+
+                <TextView
+                    android:id="@+id/meal_area"
+                    android:text="@{mealDetail.strArea}"
+                    android:layout_width="162dp"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8sp"
+                    android:maxLines="2"
+                    android:textColor="@color/green_android"
+                    android:textSize="16sp"
+                    android:textStyle="italic|bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/id"
+                    tools:text="area" />
+
+
+                <TextView
+                    android:id="@+id/instruction_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:justificationMode="inter_word"
+                    android:text="@{mealDetail.strInstructions}"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/meal_area"
+                    tools:text="@string/Lorem_ipsum" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/error_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:contentDescription="@string/warning"
+            android:src="@drawable/warning"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.53"
+            app:tint="@color/light_red" />
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/failed_to_fetch_data"
+            android:textAlignment="center"
+            android:textColor="@color/light_red"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/error_icon"
+            app:layout_constraintVertical_bias="0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
